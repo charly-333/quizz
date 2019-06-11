@@ -1,7 +1,15 @@
-div{
-    background: #eee;
+div {
+  display: flex;
+  align-items: center;
+  background: #eee;
+  height: 3em;
+      padding: 0 1em;
+      span {
+          padding: 1em;
+      }
 }
 
 img {
-    width: 50 em;
+  width: 50 em;
+  padding-bottom: 0.5em;
 }
