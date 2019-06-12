@@ -2,11 +2,19 @@
 @import '../node_modules/normalize.css/normalize.css';
 html, body {
     height: 100%;
+ @media only screen and (max-width: 414px){
+        font-size: 16px;
+    }
 }
 
 button {
     background: #eee;
-    border: none;
+    border: 1px solid #eee;
     padding: 0.5em;
     cursor: pointer;  
+}
+
+input{
+    padding: 0.5em;
+    border: 1px solid #eee;
 }
