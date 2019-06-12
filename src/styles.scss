@@ -1,32 +1,41 @@
 /* You can add global styles to this file, and also import other style files */
-@import '../node_modules/normalize.css/normalize.css';
-html, body {
-    height: 100%;
- @media only screen and (max-width: 414px){
-        font-size: 16px;
-    }
+@import "../node_modules/normalize.css/normalize.css";
+html,
+body {
+  height: 100%;
+  @media only screen and (max-width: 414px) {
+    font-size: 16px;
+  }
 }
 
 button {
-    background: #eee;
-    border: 1px solid #eee;
-    padding: 0.5em;
-    cursor: pointer;  
+  background: #eee;
+  border: 1px solid #eee;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  &:not([disabled]):hover {
+    background: #ddd;
+    border: 1px solid #ddd;
+  }
+  &:not([disabled]):active {
+    background: #ccc;
+    border: 1px solid #ccc;
+  }
+  &.primary {
+    background: #333;
+    color: white;
     &:not([disabled]):hover {
-        background: #ddd;
-        border: 1px solid #ddd;
-        }
-    &:not([disabled]):active {
-        background: #ccc;
-        border: 1px solid #ccc;
-        }
+        background: #555;
+        border: 1px solid #555;
+            }
+  }
 }
 
 [disabled] {
-    cursor: inherit;
-  }
+  cursor: inherit;
+}
 
-input{
-    padding: 0.5em;
-    border: 1px solid #eee;
+input {
+  padding: 0.5em;
+  border: 1px solid #eee;
 }
