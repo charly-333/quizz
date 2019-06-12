@@ -5,11 +5,15 @@ div {
   height: 3em;
       padding: 0 1em;
       span {
-          padding: 1em;
+          padding: 0 1em;
+      }
+      a {
+        text-decoration: none;
+        text-decoration-color: black;
       }
 }
 
 img {
   width: 50 em;
-  padding-bottom: 0.5em;
+  padding-bottom: 0em;
 }
