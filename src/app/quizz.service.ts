@@ -22,10 +22,15 @@ export class QuizzService {
 
   createCurrent(name: string) {
     this.current = new Quizz(name);
-    localStorage.setItem('current', JSON.stringify(this.current));
+    this.syncCurrent();
   }
 
   addQuestion(question: Question) {
     this.current.questions.push(question);
+    this.syncCurrent();
+  }
+
+  syncCurrent() {
+    localStorage.setItem('current', JSON.stringify(this.current));
   }
 }
