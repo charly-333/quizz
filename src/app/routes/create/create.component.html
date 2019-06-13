@@ -5,7 +5,7 @@
       <div>Nom :</div>
       <input type="text" formControlName="name">
     </label>
-    <button class="primary">Suivant</button>
+    <button class="primary" [disabled]="f.invalid">Suivant</button>
     <!-- <button class="primary" routerLink="/setup">Suivant</button> -->
   
   </form>

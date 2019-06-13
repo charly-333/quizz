@@ -24,6 +24,8 @@ export class QuestionComponent implements OnInit {
 
   submit() {
     // console.log('next question');
+    console.log('this.quizz.current.questions[this.quizz.progress.questionId].correctAnswer', this.quizz.current.questions[this.quizz.progress.questionId].correctAnswer);
+    console.log('this.f.value.answer', this.f.value.answer);
     if (this.quizz.current.questions[this.quizz.progress.questionId].correctAnswer === this.f.value.answer) {
       this.quizz.progress.score++;
     } else {
