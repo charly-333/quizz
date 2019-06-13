@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { faSmile, faGrinHearts } from '@fortawesome/free-regular-svg-icons';
+import { faPoo } from '@fortawesome/free-solid-svg-icons';
+import { QuizzService } from 'src/app/quizz.service';
 
 @Component({
   selector: 'app-score',
@@ -7,9 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ScoreComponent implements OnInit {
 
-  constructor() { }
+  icon = faSmile;
+  message = "Bravo !";
+
+  constructor(
+    public quizz: QuizzService,
+
+  ) { }
 
   ngOnInit() {
+    if (this.quizz.progress.score <= 0) {
+      this.icon = faPoo;
+      this.message = "NUL !"
+    } else if (this.quizz.progress.score === this.quizz.current.questions.length) {
+      this.icon = faGrinHearts;
+      this.message = "EXCELLENT !"
+    }
   }
-
 }
