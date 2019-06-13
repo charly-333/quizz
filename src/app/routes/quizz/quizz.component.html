@@ -1,4 +1,4 @@
-<!-- <button *ngFor="let q of quizz.getQuizzAsArray()" (click)="startQuizz(q)">{{q.name}}</button> -->
-<button *ngFor="let q of quizz.getListAsArray()" [routerLink]="['/', q.name, 'question']">
+<!-- <button *ngFor="let q of quizz.getListAsArray()" [routerLink]="['/', q.name, 'question']"> -->
+<button *ngFor="let q of quizz.getListAsArray()" (click)="startQuizz(q)">
   {{q.name}}
 </button>

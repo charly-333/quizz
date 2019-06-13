@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { QuizzService } from 'src/app/quizz.service';
+import { FormGroup, Validators, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-question',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuestionComponent implements OnInit {
 
-  constructor() { }
+  f = new FormGroup({
+    answer: new FormControl('', Validators.required)
+   });
 
-  ngOnInit() {
-  }
+constructor(
+  public quizz: QuizzService
+) { }
+
+ngOnInit() {
+}
 
 }

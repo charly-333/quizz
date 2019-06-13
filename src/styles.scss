@@ -21,7 +21,7 @@ button {
     background: #ccc;
     border: 1px solid #ccc;
   }
-  &.primary {
+  &:not([disabled]).primary {
     background: #333;
     color: white;
     &:not([disabled]):hover {

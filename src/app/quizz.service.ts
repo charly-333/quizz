@@ -3,6 +3,11 @@ import { Quizz } from './quizz';
 import { Question } from './quizz';
 import { stringify } from 'querystring';
 
+export interface QuizzProgress {
+  questionId: number;
+  score: number;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -10,6 +15,7 @@ export class QuizzService {
 
   current: Quizz;
   list = {};
+  progress: QuizzProgress;
 
   constructor() {
 
@@ -69,6 +75,13 @@ export class QuizzService {
 
   getListAsArray(): Quizz[] {
     return Object.values(this.list);
+  }
+
+  initProgress() {
+    this.progress = {
+      questionId: 0,
+      score: 0
+    };
   }
 
 }

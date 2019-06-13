@@ -1,3 +1,14 @@
-<p>
-  question works!
-</p>
+<div class="page">{{quizz.progress.questionId}}/{{quizz.current.questions.length}}</div>
+<div class="frame">
+  <span>{{quizz.current.questions[0].label}}</span>
+  <form [formGroup]="f">
+    <div *ngFor="let chr of ['A','B','C','D']">
+      <input type="radio" formControlName="answer" [value]="chr">
+      <span>{{quizz.current.questions[0]['answer' + chr]}}</span>
+    </div>
+    <div class="button">
+      <button class="primary" [disabled]="f.invalid">Suivant</button>
+
+    </div>
+  </form>
+</div>
