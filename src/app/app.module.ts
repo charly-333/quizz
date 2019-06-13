@@ -12,6 +12,9 @@ import { SetupComponent } from './routes/setup/setup.component';
 import { AddQuestionComponent } from './routes/add-question/add-question.component';
 import { SavedComponent } from './routes/saved/saved.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { QuizzComponent } from './routes/quizz/quizz.component';
+import { QuestionComponent } from './routes/question/question.component';
+import { ScoreComponent } from './routes/score/score.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     LegalComponent,
     SetupComponent,
     AddQuestionComponent,
-    SavedComponent
+    SavedComponent,
+    QuizzComponent,
+    QuestionComponent,
+    ScoreComponent
   ],
   imports: [
     BrowserModule,

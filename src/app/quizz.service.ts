@@ -9,8 +9,15 @@ import { stringify } from 'querystring';
 export class QuizzService {
 
   current: Quizz;
+  list = {};
 
   constructor() {
+
+    this.retrieveCurrent();
+    this.retrievelist();
+  }
+
+  retrieveCurrent() {
     const str = localStorage.getItem('current');
     if (!str) {
       return;
@@ -18,6 +25,19 @@ export class QuizzService {
     const q = JSON.parse(str);
     q.__proto__ = Quizz.prototype;
     this.current = q;
+  }
+
+  retrievelist() {
+    const str = localStorage.getItem('list');
+    if (!str) {
+      return;
+    }
+    const list = JSON.parse(str);
+    // tslint:disable-next-line: forin
+    for (const name in list) {
+      list[name].__proto__ = Quizz.prototype;
+    }
+    this.list = list;
   }
 
   createCurrent(name: string) {
@@ -33,4 +53,22 @@ export class QuizzService {
   syncCurrent() {
     localStorage.setItem('current', JSON.stringify(this.current));
   }
+
+  saveCurrent() {
+    const str = localStorage.getItem('list');
+    if (str) {
+      this.list = JSON.parse(str);
+    }
+    this.list[this.current.name] = this.current;
+    localStorage.setItem('list', JSON.stringify(this.list));
+  }
+
+  hasQuizz() {
+    return Object.keys(this.list).length > 0;
+  }
+
+  getListAsArray(): Quizz[] {
+    return Object.values(this.list);
+  }
+
 }

@@ -20,7 +20,7 @@ export class CreateComponent implements OnInit {
   }
 
   submit() {
-    console.log('submit');
+    // console.log('submit');
     this.quizz.createCurrent(this.f.value.name);
     this.router.navigateByUrl('/setup');
   }
