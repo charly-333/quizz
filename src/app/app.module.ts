@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +11,7 @@ import { LegalComponent } from './routes/legal/legal.component';
 import { SetupComponent } from './routes/setup/setup.component';
 import { AddQuestionComponent } from './routes/add-question/add-question.component';
 import { SavedComponent } from './routes/saved/saved.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -23,8 +25,10 @@ import { SavedComponent } from './routes/saved/saved.component';
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     AppRoutingModule,
-    LayoutModule
+    LayoutModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,35 +1,31 @@
 <h1>
   Ajouter une question 
 </h1>
-<form>
+<form [formGroup]="f" (ngSubmit)="submit()">
   <label>
     <div>
       Texte de la question:
     </div>
-    <textarea rows="3"></textarea>
+    <textarea rows="3" formControlName="label"></textarea>
   </label>
   <div>
     Réponses
   </div>
   <div class="answers">
     <div class="text">
-      <input type="text">
-      <input type="text">
-      <input type="text">
-      <input type="text">
+      <input *ngFor="let chr of ['A', 'B', 'C', 'D']" type="text" [formControlName]="'answer' + chr">
     </div>
     <div class="radio">
-     <div> <input type="radio"><span>A</span></div>
-     <div> <input type="radio"><span>A</span></div>
-     <div> <input type="radio"><span>A</span></div>
-     <div> <input type="radio"><span>A</span></div>
+     <div *ngFor="let chr of ['A', 'B', 'C', 'D']"> <input type="radio" formControlName="correctAnswer" [value]="'answer' + chr"><span>{{chr}}</span></div>
       </div>
     <div>
       
     </div>
   </div>
   <div class="button">
-    <button>Annuler</button>
+    <button routerLink="/setup" type="button">Annuler</button>
     <button class="primary">Ajouter</button>
   </div>
 </form>
+
+{{f.value | json}}
