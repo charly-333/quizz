@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faSmile,  faGrinBeamSweat, faGrinTongueSquint } from '@fortawesome/free-regular-svg-icons';
+import { faSmile, faGrinBeamSweat, faGrinTongueSquint } from '@fortawesome/free-regular-svg-icons';
 import { faPoo, faGrinHearts } from '@fortawesome/free-solid-svg-icons';
 import { QuizzService } from 'src/app/quizz.service';
 
@@ -11,7 +11,7 @@ import { QuizzService } from 'src/app/quizz.service';
 export class ScoreComponent implements OnInit {
 
   icon = faSmile;
-  message = "Bravo !";
+  message = 'Bravo !';
 
   constructor(
     public quizz: QuizzService,
@@ -21,14 +21,14 @@ export class ScoreComponent implements OnInit {
   ngOnInit() {
     if (this.quizz.progress.score <= 0) {
       this.icon = faPoo;
-      this.message = "NUL !"
+      this.message = 'NUL !';
     } else if (this.quizz.progress.score === this.quizz.current.questions.length) {
       this.icon = faGrinHearts;
-      this.message = "EXCELLENT !"
-    } else if (this.quizz.progress.score < (this.quizz.current.questions.length / 2) ) {
+      this.message = 'EXCELLENT !';
+    } else if (this.quizz.progress.score < (this.quizz.current.questions.length / 2)) {
       // this.icon = faGrinTongueSquint;
       this.icon = faGrinBeamSweat;
-      this.message ="PEU MIEUX FAIRE !"
+      this.message = 'PEU MIEUX FAIRE !';
     }
 
   }

@@ -24,7 +24,7 @@ export class QuizzHttpService extends QuizzService {
         localStorage.setItem('list', JSON.stringify(this.list));
       },
       error: e => {
-        window.alert('synchro non fonctionnelle: mode degrade actif')
+        window.alert('synchro non fonctionnelle: mode degrade actif');
       }
     });
 
