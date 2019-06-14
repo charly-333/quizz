@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AddQuestionComponent } from './add-question.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { ReactiveFormsModule } from '@angular/forms';
 
 describe('AddQuestionComponent', () => {
   let component: AddQuestionComponent;
@@ -8,6 +10,10 @@ describe('AddQuestionComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports:[
+        RouterTestingModule,
+        ReactiveFormsModule
+      ],
       declarations: [ AddQuestionComponent ]
     })
     .compileComponents();
