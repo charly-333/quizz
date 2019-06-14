@@ -29,11 +29,10 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('Quizz');
   });
 
-  it('should render title in a h1 tag', () => {
+  it('should have Quizz has header', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('header span').textContent).toContain('Quizz');
   });
-
 });
