@@ -18,7 +18,6 @@ export class QuizzService {
   progress: QuizzProgress;
 
   constructor() {
-
     this.retrieveCurrent();
     this.retrievelist();
     this.retrieveProgress();

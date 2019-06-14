@@ -15,6 +15,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { QuizzComponent } from './routes/quizz/quizz.component';
 import { QuestionComponent } from './routes/question/question.component';
 import { ScoreComponent } from './routes/score/score.component';
+import { QuizzService } from './quizz.service';
+import { QuizzHttpService } from './quizz-http.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -31,12 +34,13 @@ import { ScoreComponent } from './routes/score/score.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     ReactiveFormsModule,
     AppRoutingModule,
     LayoutModule,
     FontAwesomeModule
   ],
-  providers: [],
+  providers: [{provide: QuizzService, useClass: QuizzHttpService}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faSmile, faGrinHearts } from '@fortawesome/free-regular-svg-icons';
-import { faPoo } from '@fortawesome/free-solid-svg-icons';
+import { faPoo, faGrinBeamSweat } from '@fortawesome/free-solid-svg-icons';
 import { QuizzService } from 'src/app/quizz.service';
 
 @Component({
@@ -25,6 +25,10 @@ export class ScoreComponent implements OnInit {
     } else if (this.quizz.progress.score === this.quizz.current.questions.length) {
       this.icon = faGrinHearts;
       this.message = "EXCELLENT !"
+    } else if (this.quizz.progress.score < (this.quizz.current.questions.length / 2) ) {
+      this.icon = faGrinBeamSweat;
+      this.message ="PEU MIEUX FAIRE !"
     }
+
   }
 }
