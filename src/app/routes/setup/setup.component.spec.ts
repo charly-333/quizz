@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SetupComponent } from './setup.component';
 import { RouterTestingModule } from '@angular/router/testing';
+import { QuizzService } from 'src/app/quizz.service';
 
 describe('SetupComponent', () => {
   let component: SetupComponent;
@@ -9,12 +10,14 @@ describe('SetupComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
-      declarations: [ SetupComponent ]
+      imports: [RouterTestingModule],
+      declarations: [SetupComponent],
+      providers: [{
+        provide: QuizzService,
+        useValue: { current: { questions: [] } }
+      }]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
